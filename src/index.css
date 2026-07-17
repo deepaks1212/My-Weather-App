@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* Global page fixes: ensure full-viewport dark background and prevent horizontal overflow */
+html, body, #root, #root-app-container {
+  height: 100%;
+  background-color: #0F172A;
+  color: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom scrollbar handling for touch-friendly horizontal sliders */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.2);
+  border-radius: 9999px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.4);
+}
+
+/* Custom micro-animations */
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 30s linear infinite;
+}
+
+/* ==========================================================================
+   High Contrast Theme Overrides (A11y Compliant)
+   ========================================================================== */
+
+/* Ensure pure black background and pure white text for root and app wrapper */
+.high-contrast,
+.high-contrast #root-app-container {
+  background-color: #000000 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}
+
+/* Map elements that should render with standard crisp high-contrast cards */
+.high-contrast #current-weather-card,
+.high-contrast #daily-forecast-container,
+.high-contrast #recommendation-widget,
+.high-contrast [id^="temp-"][id$="-card"],
+.high-contrast [id^="humidity-"][id$="-card"],
+.high-contrast [id^="wind-"][id$="-card"],
+.high-contrast [id^="uv-"][id$="-card"],
+.high-contrast [id^="pressure-"][id$="-card"],
+.high-contrast [id^="visibility-"][id$="-card"],
+.high-contrast [id^="aqi-"][id$="-card"],
+.high-contrast [id^="sun-"][id$="-card"],
+.high-contrast [id^="pm25-"][id$="-card"],
+.high-contrast [id^="pm10-"][id$="-card"],
+.high-contrast [id^="ozone-"][id$="-card"] {
+  background-color: #000000 !important;
+  background-image: none !important;
+  border: 3px solid #ffffff !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  border-radius: 16px !important;
+}
+
+/* Enforce pure white text readability inside high contrast containers */
+.high-contrast #current-weather-card *,
+.high-contrast #daily-forecast-container *,
+.high-contrast #recommendation-widget *,
+.high-contrast [id$="-card"] * {
+  color: #ffffff !important;
+}
+
+/* Elevate key status values to pure high-contrast yellow */
+.high-contrast #current-temperature,
+.high-contrast #current-weather-card .text-sky-300,
+.high-contrast #current-weather-card .text-sky-400,
+.high-contrast #current-weather-card .text-amber-400,
+.high-contrast #current-weather-card .text-green-300,
+.high-contrast .text-sky-400,
+.high-contrast .text-amber-400,
+.high-contrast .text-green-300 {
+  color: #facc15 !important;
+}
+
+/* Hourly timeline cards list and items */
+.high-contrast #hourly-forecast-container [id^="hourly-item-"] {
+  background-color: #000000 !important;
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+.high-contrast #hourly-forecast-container [id^="hourly-item-"] * {
+  color: #ffffff !important;
+}
+
+/* Active current hour highlighted in pure inverse high-contrast white */
+.high-contrast #hourly-forecast-container [id="hourly-item-0"] {
+  background-color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+.high-contrast #hourly-forecast-container [id="hourly-item-0"] * {
+  color: #000000 !important;
+}
+
+/* Inputs styling */
+.high-contrast input {
+  background-color: #000000 !important;
+  border: 3px solid #ffffff !important;
+  color: #ffffff !important;
+  border-radius: 9999px !important;
+}
+.high-contrast input::placeholder {
+  color: #a1a1aa !important;
+}
+.high-contrast input:focus {
+  border-color: #facc15 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.4) !important;
+}
+
+/* Buttons styling */
+.high-contrast button {
+  background-color: #000000 !important;
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  border-radius: 9999px !important;
+  box-shadow: none !important;
+}
+.high-contrast button * {
+  color: #ffffff !important;
+}
+.high-contrast button:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+.high-contrast button:hover * {
+  color: #000000 !important;
+}
+
+/* Search results suggestions dropdown */
+.high-contrast [id="search-results-dropdown"] {
+  background-color: #000000 !important;
+  border: 3px solid #ffffff !important;
+  color: #ffffff !important;
+  border-radius: 16px !important;
+  box-shadow: none !important;
+}
+.high-contrast [id="search-results-dropdown"] * {
+  color: #ffffff !important;
+}
+.high-contrast [id="search-results-dropdown"] button {
+  border-radius: 0 !important;
+  border: none !important;
+  border-bottom: 1px solid #ffffff !important;
+}
+.high-contrast [id="search-results-dropdown"] button:last-child {
+  border-bottom: none !important;
+}
+.high-contrast [id="search-results-dropdown"] button:hover {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+.high-contrast [id="search-results-dropdown"] button:hover * {
+  color: #000000 !important;
+}
+
+/* Daily forecast dividers */
+.high-contrast #daily-forecast-container [id^="daily-item-"] {
+  border-bottom: 2px solid #ffffff !important;
+}
+.high-contrast #daily-forecast-container [id^="daily-item-"]:last-child {
+  border-bottom: none !important;
+}
+
+/* Layout dividers */
+.high-contrast #main-header,
+.high-contrast #app-footer {
+  border-color: #ffffff !important;
+}
+.high-contrast #app-footer * {
+  color: #ffffff !important;
+}
+
+/* Spinners and loaders high contrast colors */
+.high-contrast .animate-spin {
+  border-color: #ffffff !important;
+  border-top-color: #facc15 !important;
+}
+

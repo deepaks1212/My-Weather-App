@@ -1,0 +1,6 @@
+{
+  "name": "Weather Dashboard",
+  "description": "A beautiful, real-time meteorological dashboard with interactive 7-day forecasts, search autocomplete, hourly conditions, and weather metrics.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
