@@ -106,4 +106,4 @@ The application will launch on `http://localhost:3000` (mapped behind the ingres
 To generate an optimized, static single-page application inside the `dist/` directory, run:
 ```bash
 npm run build
-```
+```# My-Weather-App
