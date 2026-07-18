@@ -112,16 +112,16 @@ npm run build
 
 ### Home Page
 
-![Home Page](./src/screensort/datafetch.png)
+![Home Page](./dist/screensort/datafetch.png)
 
 ### Weather Forecast
 
-![Forecast](./src/screensort/mobileview.png)
+![Forecast](./dist/screensort/mobileview.png)
 
 ### Mobile View
 
-![Mobile View](./src/screensort/weadther.png)
+![Mobile View](./dist/screensort/weadther.png)
 
 ### Mobile View
 
-![Mobile View](./src/screensort/weadtherF.png)
+![Mobile View](./dist/screensort/weadtherF.png)
