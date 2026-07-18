@@ -224,8 +224,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onCitySelect, isLoading }) => {
         setQuery("");
       } else {
         setSuggestions([]);
-        setGeoError("No matching city was found. Please try a nearby town or country.");
-        setTimeout(() => setGeoError(null), 4000);
+        setGeoError("Not Available");
       }
     } catch (err) {
       setSuggestions([]);
@@ -1340,7 +1339,7 @@ export default function App() {
 
         {/* Elegant Minimal Footer */}
         <footer className="text-center py-8 border-t border-slate-800/80 text-xs font-semibold uppercase tracking-wider text-slate-500 mt-12" id="app-footer">
-          <p>© 2026 DevRise Meteorological Network • Powered by Keyless Geocoding & Open-Meteo API</p>
+          <p>©Deep_code • Powered by Keyless Geocoding & Open-Meteo API</p>
         </footer>
       </div>
     </div>
