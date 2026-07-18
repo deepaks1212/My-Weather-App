@@ -108,7 +108,6 @@ To generate an optimized, static single-page application inside the `dist/` dire
 npm run build
 
 ###
-Screensort
 ## 📸 Screenshots
 
 ### Home Page
@@ -122,6 +121,7 @@ Screensort
 ### Mobile View
 
 ![Mobile View](./src/screensort/weadther%20F.png)
+
 ### Mobile View
 
 ![Mobile View](./src/screensort/weadther%20F.png)
