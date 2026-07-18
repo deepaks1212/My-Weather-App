@@ -109,19 +109,34 @@ npm run build
 
 ###
 ## 📸 Screenshots
+My-Weather-App
+│
+├── README.md
+├── screenshots
+│   ├── datafetch.png
+│   ├── mobileview.png
+│   ├── weadther.png
+│   └── weadtherF.png
+│
+├── src
+│
+└── package.json
+
+## 📸 Screenshots
 
 ### Home Page
 
-![Home Page](./dist/screensort/datafetch.png)
+![Home Page](./screensort/datafetch.png)
 
 ### Weather Forecast
 
-![Forecast](./dist/screensort/mobileview.png)
+![Forecast](./screensort/mobileview.png)
 
-### Mobile View
+### Weather View
 
-![Mobile View](./dist/screensort/weadther.png)
+![Weather](./screensort/weadther1.png)
 
-### Mobile View
 
-![Mobile View](./dist/screensort/weadtherF.png)
+### Fahrenheit View
+
+![Fahrenheit](./screensort/weadther2.png)
